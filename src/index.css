@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-surface: #121315;
+  --color-surface-container: #1F2022;
+  --color-surface-container-low: #1B1C1E;
+  --color-surface-container-high: #292A2C;
+  --color-surface-container-highest: #343537;
+  --color-surface-container-lowest: #0D0E10;
+  
+  --color-primary: #F2F200;
+  --color-on-primary: #121315;
+  --color-primary-container: #CACA00;
+  
+  --color-secondary: #FFDF9E;
+  --color-on-secondary: #3F2E00;
+  
+  --color-outline: #868670;
+  --color-outline-variant: #3C3C20;
+  
+  --color-on-surface: #E3E2E5;
+  --color-on-surface-variant: #BBC9C8;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans selection:bg-primary selection:text-on-primary;
+  }
+}
+
+@layer utilities {
+  .data-grid {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(60, 73, 72, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(60, 73, 72, 0.05) 1px, transparent 1px);
+  }
+  
+  .code-rain {
+    mask-image: linear-gradient(to bottom, transparent, black, transparent);
+  }
+
+  .glitch-text:hover {
+    text-shadow: 2px 0 #FFDF9E, -2px 0 #F2F200;
+  }
+}
